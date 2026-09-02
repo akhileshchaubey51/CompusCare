@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusCare</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page1">
+        <div class="navbar">
+            <div class="logo" style="background-color: rgb(168, 170, 166);">
+                <img src="images/logo.jpg" alt="CampusCare Logo">
+            </div>
+            <ul class="nav-link">
+                <li class="link"><a href="#home">Home</a></li>
+                <li class="issues-menu">
+                    <a href="#issues">Issues ▾</a>
+                    <ol class="issue-dropdown">
+                        <li><a href="#issues">Road Issues</a></li>
+                        <li><a href="#issues">Water Issues</a></li>
+                        <li><a href="#issues">Electricity</a></li>
+                        <li><a href="#issues">Cleanliness</a></li>
+                        <li><a href="#issues">Parking</a></li>
+                        <li><a href="#issues">Other Issues</a></li>
+                    </ol>
+                </li>
+                <li class="link"><a href="#how-it-works">How It Works</a></li>
+                <li class="link"><a href="#contact">Contact us</a></li>
+                <li class="link"><a href="#about">About</a></li>
+            </ul>
+            <button class="login-btn" onclick="goToLogin()">Login</button>
+        </div>
+        <div class="announcement">
+           <b> <marquee behavior="scroll" direction="left" scrollamount="12" onmouseover="this.stop();" onmouseout="this.start();">
+              Welcome to CampusCare | Submit your complaints easily | Track your complaint status | Stay updated with campus notices
+            </marquee></b>
+        </div>
+        <div class="page1-content" id="home">
+            <div class="hero-text-center">
+                <span class="heading1">KIET</span>
+                <span class="heading2">Smart Civic Problem Reporting System</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="issues-section" id="issues">
+        <p class="section-small-title">CAMPUSCARE</p>
+        <h2>Report Any Campus Issue</h2>
+        <p class="section-description">
+            From infrastructure problems to cleanliness and safety issues, report everything from one place.
+        </p>
+        <div class="issues-container">
+            <div class="issue-box">
+                <div class="issue-image">
+                    <img src="images/road.jpg" alt="Road Issues">
+                </div>
+                <h3>Road Issues</h3>
+                <p>Report potholes, damaged roads and unsafe pathways.</p>
+                <button onclick="loginRequired()">Report</button>
+            </div>
+            <div class="issue-box">
+                <div class="issue-image">
+                    <img src="images/water.jpg" alt="Water Issues">
+                </div>
+                <h3>Water Issues</h3>
+                <p>Report leakage, water supply and drainage problems.</p>
+                <button onclick="loginRequired()">Report</button>
+            </div>
+            <div class="issue-box">
+                <div class="issue-image">
+                    <img src="images/electricity.jpg" alt="Electricity">
+                </div>
+                <h3>Electricity</h3>
+                <p>Report broken lights, switches and electrical problems.</p>
+                <button onclick="loginRequired()">Report</button>
+            </div>
+            <div class="issue-box">
+                <div class="issue-image">
+                    <img src="images/cleanliness.jpg" alt="Cleanliness">
+                </div>
+                <h3>Cleanliness</h3>
+                <p>Report garbage, dirty areas and sanitation problems.</p>
+                <button onclick="loginRequired()">Report</button>
+            </div>
+            <div class="issue-box">
+                <div class="issue-image">
+                    <img src="images/parking.jpg" alt="Parking">
+                </div>
+                <h3>Parking</h3>
+                <p>Report parking problems and blocked parking areas.</p>
+                <button onclick="loginRequired()">Report</button>
+            </div>
+            <div class="issue-box">
+                <div class="issue-image">
+                    <img src="images/infrastructure.jpg" alt="Infrastructure">
+                </div>
+                <h3>Infrastructure</h3>
+                <p>Report damaged classrooms, furniture, doors and windows.</p>
+                <button onclick="loginRequired()">Report</button>
+            </div>
+            <div class="issue-box">
+                <div class="issue-image">
+                    <img src="images/internet.jpg" alt="Internet / Wi-Fi">
+                </div>
+                <h3>Internet / Wi-Fi</h3>
+                <p>Report network connectivity and Wi-Fi problems.</p>
+                <button onclick="loginRequired()">Report</button>
+            </div>
+            <div class="issue-box">
+                <div class="issue-image">
+                    <img src="images/other.jpg" alt="Other Issues">
+                </div>
+                <h3>Other Issues</h3>
+                <p>Report any other problem affecting the campus.</p>
+                <button onclick="loginRequired()">Report</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+        <div class="how-heading">
+            <p class="section-small-title">SIMPLE & SMART</p>
+            <h2>How CampusCare Works</h2>
+            <p class="section-description">
+                Report a campus problem in just four simple steps. From capturing the issue to tracking its resolution, everything happens in one place.
+            </p>
+        </div>
+        <div class="steps-container">
+            <div class="step-box">
+                <div class="step-image">
+                    <img src="images/capture.png" alt="Capture Campus Issue">
+                    <span class="step-number">01</span>
+                </div>
+                <div class="step-content">
+                    <span class="step-label">STEP 01</span>
+                    <h3>Capture</h3>
+                    <p>Take a photo of the campus problem or upload an existing image to report the issue.</p>
+                </div>
+            </div>
+            <div class="step-box">
+                <div class="step-image">
+                    <img src="images/gps.png" alt="GPS Location">
+                    <span class="step-number">02</span>
+                </div>
+                <div class="step-content">
+                    <span class="step-label">STEP 02</span>
+                    <h3>GPS Location</h3>
+                    <p>Your location can be captured automatically so the concerned team knows exactly where the problem exists.</p>
+                </div>
+            </div>
+            <div class="step-box">
+                <div class="step-image">
+                    <img src="images/ai-analysis.png" alt="AI Analysis">
+                    <span class="step-number">03</span>
+                </div>
+                <div class="step-content">
+                    <span class="step-label">STEP 03</span>
+                    <h3>AI Analysis</h3>
+                    <p>AI analyzes the submitted complaint and helps identify the issue and detect duplicate reports.</p>
+                </div>
+            </div>
+            <div class="step-box">
+                <div class="step-image">
+                    <img src="images/track.jpg" alt="Track Complaint">
+                    <span class="step-number">04</span>
+                </div>
+                <div class="step-content">
+                    <span class="step-label">STEP 04</span>
+                    <h3>Track</h3>
+                    <p>Track your complaint from submission to resolution and stay updated at every stage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <p class="section-small-title">ABOUT CAMPUSCARE</p>
+            <h2>One Platform For A <span>Better Campus</span></h2>
+            <p class="about-main-text">
+                CampusCare is a student-focused platform designed to make campus issue reporting simple, transparent and efficient.
+            </p>
+            <p class="about-sub-text">
+                Students can report problems using images and location information instead of visiting different teams personally. The system uses AI to identify issues, detect duplicate complaints and help prioritize important problems.
+            </p>
+            <button class="primary-btn about-btn" onclick="goToLogin()">Get Started →</button>
+        </div>
+        <div class="about-stats">
+            <div class="stat-card">
+                <div class="stat-icon">⏱️</div>
+                <strong>24/7</strong>
+                <span>Issue Reporting</span>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🤖</div>
+                <strong>AI</strong>
+                <span>Smart Detection</span>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📍</div>
+                <strong>GPS</strong>
+                <span>Location Based</span>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">✓</div>
+                <strong>1</strong>
+                <span>Unified Platform</span>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-column kiet-contact">
+                <img src="images/dark_logo.webp" alt="KIET University Logo" class="kiet-logo">
+                <p>
+                    Address : KIET, Delhi-NCR,<br>
+                    Ghaziabad-Meerut Road, Ghaziabad<br>
+                    (201206)<br>
+                    Helpline Number: +91-7949335337<br>
+                    For admission, call us at:<br>
+                    +91-8445557599<br>
+                    Email: admissions@kiet.edu
+                </p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#issues">Issues</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#about">About</a>
+                <a href="video/College_tour.mp4">Campus Tour</a>
+            </div>
+            <div class="footer-column">
+                <h3>Campus Issues</h3>
+                <a href="#issues">Road Issues</a>
+                <a href="#issues">Water Issues</a>
+                <a href="#issues">Electricity</a>
+                <a href="#issues">Cleanliness</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 CampusCare | All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div class="login-popup" id="loginPopup">
+        <div class="popup-box">
+            <button class="close-popup" onclick="closeLoginPopup()">×</button>
+            <div class="popup-icon"></div>
+            <h2>Login Required</h2>
+            <p>Please login with your college ID to report a campus issue.</p>
+            <button class="primary-btn" onclick="goToLogin()">Go to Login</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

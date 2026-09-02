@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusCare | Student Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<!-- ===================================================== 
+     HERO / NAVBAR 
+===================================================== -->
+
+<div class="page1">
+
+    <div class="navbar">
+
+        <!-- LOGO -->
+        <div class="logo">
+            <img src="images/logo.jpg" alt="CampusCare Logo">
+        </div>
+
+        <!-- NAVIGATION -->
+        <ul class="nav-link">
+
+            <li class="link">
+                <a href="#home">Home</a>
+            </li>
+
+            <!-- ISSUES DROPDOWN -->
+            <li class="issues-menu">
+                <a href="#issues">Issues ▾</a>
+                <ol class="issue-dropdown">
+                    <li><a href="complaint-form.html">Road Issues</a></li>
+                    <li><a href="complaint-form.html">Water Issues</a></li>
+                    <li><a href="complaint-form.html">Electricity</a></li>
+                    <li><a href="complaint-form.html">Cleanliness</a></li>
+                    <li><a href="complaint-form.html">Parking</a></li>
+                    <li><a href="complaint-form.html">Infrastructure</a></li>
+                    <li><a href="complaint-form.html">Internet / Wi-Fi</a></li>
+                    <li><a href="complaint-form.html">Other Issues</a></li>
+                </ol>
+            </li>
+
+            <li class="link">
+                <a href="#how-it-works">How It Works</a>
+            </li>
+
+            <li class="link">
+                <a href="#contact">Contact us</a>
+            </li>
+
+            <li class="link">
+                <a href="#about">About</a>
+            </li>
+
+        </ul>
+
+        <!-- STUDENT PROFILE -->
+        <div class="student-profile" id="studentProfileContainer">
+
+            <!-- PROFILE BUTTON -->
+            <button 
+                type="button" 
+                class="profile-button" 
+                onclick="toggleProfileMenu(event)">
+
+                <img 
+                    id="profilePhoto" 
+                    src="https://ui-avatars.com/api/?name=Student&background=2563eb&color=fff&bold=true" 
+                    alt="Student Profile">
+
+                <div class="profile-info">
+                    <strong id="profileName">Student</strong>
+                    <span id="profileCourse">Loading...</span>
+                </div>
+
+                <span class="profile-arrow">▾</span>
+
+            </button>
+
+            <!-- PROFILE DROPDOWN MENU -->
+            <div class="profile-dropdown" id="profileDropdown" onclick="event.stopPropagation()">
+
+                <div class="profile-header">
+                    <img 
+                        id="dropdownProfilePhoto" 
+                        src="https://ui-avatars.com/api/?name=Student&background=2563eb&color=fff&bold=true" 
+                        alt="Student Profile">
+
+                    <div>
+                        <strong id="dropdownProfileName">Student</strong>
+                        <span id="dropdownKietId">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="profile-divider"></div>
+
+                <button type="button" onclick="openMyProfile()">
+                    <span>👤</span> My Profile
+                </button>
+
+                <button type="button" onclick="openMyComplaints()">
+                    <span>📋</span> My Complaints
+                </button>
+
+                <button type="button" onclick="openChangePassword()">
+                    <span>🔐</span> Change Password
+                </button>
+
+                <div class="profile-divider"></div>
+
+                <button type="button" class="logout-button" onclick="logoutUser()">
+                    <span>🚪</span> Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ANNOUNCEMENT -->
+    <div class="announcement">
+        <marquee 
+            behavior="scroll" 
+            direction="left" 
+            scrollamount="10" 
+            onmouseover="this.stop();" 
+            onmouseout="this.start();">
+            Welcome to CampusCare | Submit your complaints easily | Track your complaint status | Stay updated with campus notices
+        </marquee>
+    </div>
+
+    <!-- HERO CONTENT -->
+    <div class="page1-content" id="home">
+        <div class="hero-text-center">
+            <span class="heading1">KIET</span>
+            <span class="heading2">Smart Civic Problem Reporting System</span>
+        </div>
+    </div>
+
+</div>
+
+<!-- ===================================================== 
+     ISSUES SECTION 
+===================================================== -->
+
+<section class="issues-section" id="issues">
+
+    <p class="section-small-title">CAMPUSCARE</p>
+
+    <h2>Report Any Campus Issue</h2>
+
+    <p class="section-description">
+        From infrastructure problems to cleanliness and safety issues, report everything from one place.
+    </p>
+
+    <div class="issues-container">
+
+        <div class="issue-box">
+            <div class="issue-image">
+                <img src="images/road.jpg" alt="Road Issues">
+            </div>
+            <h3>Road Issues</h3>
+            <p>Report potholes, damaged roads and unsafe pathways.</p>
+            <button type="button" onclick="openComplaintPage('Road Issues')">Report</button>
+        </div>
+
+        <div class="issue-box">
+            <div class="issue-image">
+                <img src="images/water.jpg" alt="Water Issues">
+            </div>
+            <h3>Water Issues</h3>
+            <p>Report leakage, water supply and drainage problems.</p>
+            <button type="button" onclick="openComplaintPage('Water Issues')">Report</button>
+        </div>
+
+        <div class="issue-box">
+            <div class="issue-image">
+                <img src="images/electricity.jpg" alt="Electricity">
+            </div>
+            <h3>Electricity</h3>
+            <p>Report broken lights, switches and electrical problems.</p>
+            <button type="button" onclick="openComplaintPage('Electricity')">Report</button>
+        </div>
+
+        <div class="issue-box">
+            <div class="issue-image">
+                <img src="images/cleanliness.jpg" alt="Cleanliness">
+            </div>
+            <h3>Cleanliness</h3>
+            <p>Report garbage, dirty areas and sanitation problems.</p>
+            <button type="button" onclick="openComplaintPage('Cleanliness')">Report</button>
+        </div>
+
+        <div class="issue-box">
+            <div class="issue-image">
+                <img src="images/parking.jpg" alt="Parking">
+            </div>
+            <h3>Parking</h3>
+            <p>Report parking problems and blocked parking areas.</p>
+            <button type="button" onclick="openComplaintPage('Parking')">Report</button>
+        </div>
+
+        <div class="issue-box">
+            <div class="issue-image">
+                <img src="images/infrastructure.jpg" alt="Infrastructure">
+            </div>
+            <h3>Infrastructure</h3>
+            <p>Report damaged classrooms, furniture, doors and windows.</p>
+            <button type="button" onclick="openComplaintPage('Infrastructure')">Report</button>
+        </div>
+
+        <div class="issue-box">
+            <div class="issue-image">
+                <img src="images/internet.jpg" alt="Internet / Wi-Fi">
+            </div>
+            <h3>Internet / Wi-Fi</h3>
+            <p>Report network connectivity and Wi-Fi problems.</p>
+            <button type="button" onclick="openComplaintPage('Internet / Wi-Fi')">Report</button>
+        </div>
+
+        <div class="issue-box">
+            <div class="issue-image">
+                <img src="images/other.jpg" alt="Other Issues">
+            </div>
+            <h3>Other Issues</h3>
+            <p>Report any other problem affecting the campus.</p>
+            <button type="button" onclick="openComplaintPage('Other Issues')">Report</button>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================================================== 
+     HOW IT WORKS 
+===================================================== -->
+
+<section class="how-section" id="how-it-works">
+
+    <div class="how-heading">
+        <p class="section-small-title">SIMPLE & SMART</p>
+        <h2>How CampusCare Works</h2>
+        <p class="section-description">
+            Report a campus problem in just four simple steps. From capturing the issue to tracking its resolution, everything happens in one place.
+        </p>
+    </div>
+
+    <div class="steps-container">
+
+        <div class="step-box">
+            <div class="step-image">
+                <img src="images/capture.png" alt="Capture Campus Issue">
+                <span class="step-number">01</span>
+            </div>
+            <div class="step-content">
+                <span class="step-label">STEP 01</span>
+                <h3>Capture</h3>
+                <p>Take a photo of the campus problem or upload an existing image to report the issue.</p>
+            </div>
+        </div>
+
+        <div class="step-box">
+            <div class="step-image">
+                <img src="images/gps.png" alt="GPS Location">
+                <span class="step-number">02</span>
+            </div>
+            <div class="step-content">
+                <span class="step-label">STEP 02</span>
+                <h3>GPS Location</h3>
+                <p>Your location can be captured automatically so the concerned team knows exactly where the problem exists.</p>
+            </div>
+        </div>
+
+        <div class="step-box">
+            <div class="step-image">
+                <img src="images/ai-analysis.png" alt="AI Analysis">
+                <span class="step-number">03</span>
+            </div>
+            <div class="step-content">
+                <span class="step-label">STEP 03</span>
+                <h3>AI Analysis</h3>
+                <p>AI analyzes the submitted complaint and helps identify the issue and detect duplicate reports.</p>
+            </div>
+        </div>
+
+        <div class="step-box">
+            <div class="step-image">
+                <img src="images/track.jpg" alt="Track Complaint">
+                <span class="step-number">04</span>
+            </div>
+            <div class="step-content">
+                <span class="step-label">STEP 04</span>
+                <h3>Track</h3>
+                <p>Track your complaint from submission to resolution and stay updated at every stage.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================================================== 
+     ABOUT 
+===================================================== -->
+
+<section class="about-section" id="about">
+
+    <div class="about-content">
+        <p class="section-small-title">ABOUT CAMPUSCARE</p>
+        <h2>One Platform For A <span>Better Campus</span></h2>
+        <p class="about-main-text">
+            CampusCare is a student-focused platform designed to make campus issue reporting simple, transparent and efficient.
+        </p>
+        <p class="about-sub-text">
+            Students can report problems using images and location information instead of visiting different teams personally. The system uses AI to identify issues, detect duplicate complaints and help prioritize important problems.
+        </p>
+        <button class="primary-btn about-btn" onclick="scrollToIssues()">Report an Issue →</button>
+    </div>
+
+    <div class="about-stats">
+
+        <div class="stat-card">
+            <div class="stat-icon">⏱️</div>
+            <strong>24/7</strong>
+            <span>Issue Reporting</span>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">🤖</div>
+            <strong>AI</strong>
+            <span>Smart Detection</span>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">📍</div>
+            <strong>GPS</strong>
+            <span>Location Based</span>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">✓</div>
+            <strong>1</strong>
+            <span>Unified Platform</span>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================================================== 
+     FOOTER 
+===================================================== -->
+
+<footer id="contact">
+
+    <div class="footer-container">
+
+        <div class="footer-column kiet-contact">
+            <img src="images/dark_logo.webp" alt="KIET University Logo" class="kiet-logo">
+            <p>
+                Address : KIET, Delhi-NCR,<br>
+                Ghaziabad-Meerut Road, Ghaziabad<br>
+                (201206)<br>
+                Helpline Number: +91-7949335337<br>
+                For admission, call us at:<br>
+                +91-8445557599<br>
+                Email: admissions@kiet.edu
+            </p>
+        </div>
+
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <a href="#home">Home</a>
+            <a href="#issues">Issues</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#about">About</a>
+            <a href="video/College_tour.mp4">Campus Tour</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Campus Issues</h3>
+            <a href="#issues">Road Issues</a>
+            <a href="#issues">Water Issues</a>
+            <a href="#issues">Electricity</a>
+            <a href="#issues">Cleanliness</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 CampusCare | All Rights Reserved.</p>
+    </div>
+
+</footer>
+
+<!-- ===================================================== 
+     MODAL 1: MY PROFILE
+===================================================== -->
+
+<div class="modal-overlay" id="profileViewModal">
+
+    <div class="small-modal modern-card-modal">
+        <button class="modal-close" onclick="closeMyProfile()">×</button>
+        
+        <div class="modal-badge-icon">
+            <span>👤</span>
+        </div>
+
+        <h2>Student Profile</h2>
+        <p class="modal-description">Official KIET registration record.</p>
+
+        <div class="profile-info-grid">
+            <div class="info-tile">
+                <span class="tile-label">Full Name</span>
+                <strong class="tile-value" id="viewStudentName">-</strong>
+            </div>
+
+            <div class="info-tile">
+                <span class="tile-label">KIET Email / ID</span>
+                <strong class="tile-value" id="viewStudentId">-</strong>
+            </div>
+
+            <div class="info-tile">
+                <span class="tile-label">Course</span>
+                <strong class="tile-value" id="viewStudentCourse">-</strong>
+            </div>
+
+            <div class="info-tile">
+                <span class="tile-label">Department</span>
+                <strong class="tile-value" id="viewStudentDept">-</strong>
+            </div>
+
+            <div class="info-tile">
+                <span class="tile-label">Current Semester</span>
+                <strong class="tile-value" id="viewStudentSemester">-</strong>
+            </div>
+
+            <div class="info-tile">
+                <span class="tile-label">Contact Phone</span>
+                <strong class="tile-value" id="viewStudentPhone">-</strong>
+            </div>
+        </div>
+
+        <button class="modal-action-btn" onclick="closeMyProfile()">Done</button>
+    </div>
+
+</div>
+
+<!-- ===================================================== 
+     MODAL 2: MY COMPLAINTS (ATTRACTIVE DYNAMIC VIEW)
+===================================================== -->
+
+<div class="modal-overlay" id="complaintsModal">
+
+    <div class="small-modal modern-card-modal complaints-modal-box">
+        <button class="modal-close" onclick="closeMyComplaints()">×</button>
+        
+        <div class="modal-badge-icon">
+            <span>📋</span>
+        </div>
+
+        <h2>My Complaints</h2>
+        <p class="modal-description">Track all your registered issues and live resolution status.</p>
+
+        <!-- DYNAMIC COMPLAINTS CONTAINER -->
+        <div id="complaintsListContainer" class="complaints-scroll-container">
+            <div class="complaints-loading-state">
+                <div class="loading-spinner"></div>
+                <p>Fetching your complaint history...</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 18px;">
+            <button type="button" class="submit-btn" onclick="closeMyComplaints(); scrollToIssues();">
+                + Report New Issue
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<!-- ===================================================== 
+     MODAL 3: CHANGE PASSWORD
+===================================================== -->
+
+<div class="modal-overlay" id="passwordModal">
+
+    <div class="small-modal modern-card-modal">
+        <button class="modal-close" onclick="closeChangePassword()">×</button>
+        
+        <div class="modal-badge-icon">
+            <span>🔐</span>
+        </div>
+
+        <h2>Change Password</h2>
+        <p class="modal-description">Keep your student portal safe & secure.</p>
+
+        <form onsubmit="changePassword(event)" class="modern-form">
+
+            <div class="modern-field">
+                <label for="currentPassword">Current Password</label>
+                <div class="field-wrap">
+                    <input 
+                        type="password" 
+                        id="currentPassword" 
+                        placeholder="••••••••" 
+                        required>
+                </div>
+            </div>
+
+            <div class="modern-field">
+                <label for="newPassword">New Password</label>
+                <div class="field-wrap">
+                    <input 
+                        type="password" 
+                        id="newPassword" 
+                        placeholder="Minimum 6 characters" 
+                        required>
+                </div>
+            </div>
+
+            <div class="modern-field">
+                <label for="confirmPassword">Confirm New Password</label>
+                <div class="field-wrap">
+                    <input 
+                        type="password" 
+                        id="confirmPassword" 
+                        placeholder="Re-enter new password" 
+                        required>
+                </div>
+            </div>
+
+            <p class="password-message" id="passwordMessage"></p>
+
+            <button type="submit" class="modal-action-btn">
+                Update Password
+            </button>
+
+        </form>
+    </div>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script src="dashboard.js"></script>
+
+</body>
+
+</html>

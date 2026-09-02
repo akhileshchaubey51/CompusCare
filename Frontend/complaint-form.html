@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusCare | Report Issue</title>
+
+    <!-- Leaflet Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="complaint-form.css">
+</head>
+
+<body>
+
+    <div class="form-container">
+
+        <div class="form-box">
+
+            <!-- HEADER -->
+            <div class="form-header">
+                <div class="form-icon">
+                    <img src="images/logo.jpg" alt="KIET Logo">
+                </div>
+                <h1>Report Campus Issue</h1>
+                <p>Report a problem inside the KIET campus.</p>
+            </div>
+
+            <!-- FORM WRAPPER (DIV instead of FORM to stop any reload) -->
+            <div class="complaint-inputs-wrapper">
+
+                <!-- ISSUE TYPE & PRIORITY -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="issueType">Issue Type</label>
+                        <select id="issueType" name="issueType">
+                            <option value="">Select Issue Type</option>
+                            <option value="Road Issues">Road Issues</option>
+                            <option value="Water Issues">Water Issues</option>
+                            <option value="Electricity Issues">Electricity Issues</option>
+                            <option value="Cleanliness Issues">Cleanliness Issues</option>
+                            <option value="Safety Issues">Safety Issues</option>
+                            <option value="Other Issues">Other Issues</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Priority">Priority</label>
+                        <select id="Priority" name="Priority">
+                            <option value="">Select Priority</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                            <option value="Critical">Critical</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- DESCRIPTION -->
+                <div class="form-group">
+                    <label for="description">Describe the Issue</label>
+                    <textarea
+                        id="description"
+                        name="description"
+                        placeholder="Describe the problem in detail..."
+                    ></textarea>
+                </div>
+
+                <!-- IMAGE UPLOAD -->
+                <div class="form-group">
+                    <label for="image">Upload Image</label>
+                    <input
+                        type="file"
+                        id="image"
+                        name="image"
+                        accept="image/*"
+                    >
+                </div>
+
+                <!-- LOCATION -->
+                <div class="form-group">
+                    <label>Complaint Location</label>
+                    <div class="location-box">
+                        <div class="location-input-row">
+                            <input
+                                type="text"
+                                id="location"
+                                name="location"
+                                placeholder="Click Current Location"
+                                readonly
+                            >
+                            <button
+                                type="button"
+                                class="location-btn"
+                                onclick="getCurrentLocation()"
+                            >
+                                📍 Current Location
+                            </button>
+                        </div>
+
+                        <p id="locationStatus" class="location-status">
+                            Your location will be checked inside KIET campus.
+                        </p>
+
+                        <!-- SATELLITE MAP -->
+                        <div id="campusMap" class="campus-map"></div>
+                    </div>
+                </div>
+
+                <!-- HIDDEN GPS VALUES -->
+                <input type="hidden" id="latitude" name="latitude">
+                <input type="hidden" id="longitude" name="longitude">
+
+                <!-- SUBMIT BUTTON -->
+                <button
+                    type="button"
+                    class="submit-btn"
+                    id="submitBtn"
+                    onclick="submitComplaintDirect()"
+                >
+                    Submit Complaint
+                </button>
+
+                <!-- BACK BUTTON -->
+                <button
+                    type="button"
+                    class="back-btn"
+                    onclick="window.location.href='dashboard.html'"
+                >
+                    ← Back to Dashboard
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="complaint-form.js"></script>
+
+</body>
+
+</html>

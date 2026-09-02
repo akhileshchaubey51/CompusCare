@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusCare | Admin Panel</title>
+
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     ADMIN NAVBAR
+===================================================== -->
+
+<header class="admin-navbar">
+
+    <div class="admin-logo">
+
+        <img
+            src="images/logo.jpg"
+            alt="CampusCare Logo">
+
+        <div>
+
+            <h2>CampusCare</h2>
+
+            <span>Admin Panel</span>
+
+        </div>
+
+    </div>
+
+
+    <button
+        type="button"
+        class="logout-btn"
+        onclick="adminLogout()">
+
+        Logout
+
+    </button>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="admin-container">
+
+
+    <!-- =================================================
+         PAGE HEADING
+    ================================================== -->
+
+    <div class="page-heading">
+
+        <p>ADMINISTRATION</p>
+
+        <h1>Student Management</h1>
+
+        <span>
+            Add student information directly to the CampusCare database.
+        </span>
+
+    </div>
+
+
+
+    <!-- =================================================
+         ADD STUDENT FORM
+    ================================================== -->
+
+    <section class="admin-card">
+
+        <div class="card-heading">
+
+            <div>
+
+                <h2>Add New Student</h2>
+
+                <p>
+                    Enter the student's official college information.
+                </p>
+
+            </div>
+
+            <div class="card-icon">
+                👨‍🎓
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             STUDENT FORM
+        ================================================== -->
+
+        <form
+            id="studentForm"
+            onsubmit="addStudent(event)"
+            enctype="multipart/form-data">
+
+
+            <!-- =================================================
+                 ROW 1
+            ================================================== -->
+
+            <div class="form-row">
+
+
+                <!-- KIET ID -->
+
+                <div class="form-group">
+
+                    <label for="kiet_id">
+                        KIET ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="kiet_id"
+                        name="kiet_id"
+                        placeholder="Example: 2628MCA0206@kiet.edu"
+                        required>
+
+                </div>
+
+
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Student Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter full name"
+                        required>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ROW 2
+            ================================================== -->
+
+            <div class="form-row">
+
+
+                <!-- DEPARTMENT -->
+
+                <div class="form-group">
+
+                    <label for="department">
+                        Department
+                    </label>
+
+                    <input
+                        type="text"
+                        id="department"
+                        name="department"
+                        placeholder="Example: Computer Applications"
+                        required>
+
+                </div>
+
+
+
+                <!-- COURSE -->
+
+                <div class="form-group">
+
+                    <label for="course">
+                        Course
+                    </label>
+
+                    <select
+                        id="course"
+                        name="course"
+                        required>
+
+                        <option value="">
+                            Select Course
+                        </option>
+
+                        <option value="BCA">
+                            BCA
+                        </option>
+
+                        <option value="MCA">
+                            MCA
+                        </option>
+
+                        <option value="B.Tech">
+                            B.Tech
+                        </option>
+
+                        <option value="M.Tech">
+                            M.Tech
+                        </option>
+
+                        <option value="MBA">
+                            MBA
+                        </option>
+
+                        <option value="BBA">
+                            BBA
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ROW 3
+            ================================================== -->
+
+            <div class="form-row">
+
+
+                <!-- SEMESTER -->
+
+                <div class="form-group">
+
+                    <label for="semester">
+                        Semester
+                    </label>
+
+                    <select
+                        id="semester"
+                        name="semester"
+                        required>
+
+                        <option value="">
+                            Select Semester
+                        </option>
+
+                        <option value="1">
+                            1st Semester
+                        </option>
+
+                        <option value="2">
+                            2nd Semester
+                        </option>
+
+                        <option value="3">
+                            3rd Semester
+                        </option>
+
+                        <option value="4">
+                            4th Semester
+                        </option>
+
+                        <option value="5">
+                            5th Semester
+                        </option>
+
+                        <option value="6">
+                            6th Semester
+                        </option>
+
+                        <option value="7">
+                            7th Semester
+                        </option>
+
+                        <option value="8">
+                            8th Semester
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- PHONE -->
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        maxlength="10"
+                        pattern="[0-9]{10}"
+                        placeholder="Enter 10 digit number">
+
+                    <small>
+                        Enter a valid 10 digit mobile number.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ROW 4
+            ================================================== -->
+
+            <div class="form-row">
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Initial Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        minlength="6"
+                        placeholder="Enter student password"
+                        required>
+
+                    <small>
+                        Student will use this password for first login.
+                    </small>
+
+                </div>
+
+
+
+                <!-- STATUS -->
+
+                <div class="form-group">
+
+                    <label for="status">
+                        Account Status
+                    </label>
+
+                    <select
+                        id="status"
+                        name="status"
+                        required>
+
+                        <option value="Active">
+                            Active
+                        </option>
+
+                        <option value="Inactive">
+                            Inactive
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PROFILE PHOTO UPLOAD
+            ================================================== -->
+
+           <div class="form-group full-width">
+
+    <label for="profilePhoto">
+        Profile Photo
+    </label>
+
+    <input
+        type="file"
+        id="profilePhoto"
+        name="profile_photo"
+        accept="image/jpeg,image/png,image/webp">
+
+    <small>
+        Select the student's profile photo.
+        JPG, PNG or WEBP only.
+    </small>
+
+</div>
+
+
+
+            <!-- =================================================
+                 PHOTO PREVIEW
+            ================================================== -->
+
+            <div
+                id="photoPreviewContainer"
+                class="photo-preview-container"
+                style="display: none;">
+
+                <img
+                    id="photoPreview"
+                    src=""
+                    alt="Profile Photo Preview"
+                    class="photo-preview">
+
+                <button
+                    type="button"
+                    id="removePhotoBtn"
+                    class="remove-photo-btn">
+
+                    Remove Photo
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FORM MESSAGE
+            ================================================== -->
+
+            <div
+                id="formMessage"
+                class="form-message">
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FORM ACTIONS
+            ================================================== -->
+
+            <div class="form-actions">
+
+
+                <!-- CLEAR -->
+
+                <button
+                    type="reset"
+                    class="clear-btn"
+                    onclick="clearMessage()">
+
+                    Clear
+
+                </button>
+
+
+
+                <!-- ADD STUDENT -->
+
+                <button
+                    type="submit"
+                    class="add-btn"
+                    id="addStudentBtn">
+
+                    + Add Student
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INFORMATION SECTION
+    ===================================================== -->
+
+    <section class="info-section">
+
+
+        <!-- DATABASE -->
+
+        <div class="info-box">
+
+            <span>✓</span>
+
+            <div>
+
+                <h3>
+                    Database Connected
+                </h3>
+
+                <p>
+                    New students are inserted directly into
+                    the CampusCare SQL Server database.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- STUDENT DATA -->
+
+        <div class="info-box">
+
+            <span>👤</span>
+
+            <div>
+
+                <h3>
+                    Individual Student Data
+                </h3>
+
+                <p>
+                    Every student gets their own KIET ID,
+                    profile and login credentials.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SECURITY -->
+
+        <div class="info-box">
+
+            <span>🔐</span>
+
+            <div>
+
+                <h3>
+                    Secure Login
+                </h3>
+
+                <p>
+                    Students can only access their own dashboard
+                    after successful login.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="admin.js"></script>
+
+
+<!-- =====================================================
+     PROFILE PHOTO PREVIEW
+===================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const photoInput =
+            document.getElementById("profilePhoto");
+
+        const previewContainer =
+            document.getElementById(
+                "photoPreviewContainer"
+            );
+
+        const preview =
+            document.getElementById("photoPreview");
+
+        const removeButton =
+            document.getElementById(
+                "removePhotoBtn"
+            );
+
+
+        /* ==========================================
+           PHOTO SELECT
+        ========================================== */
+
+        if (photoInput) {
+
+            photoInput.addEventListener(
+                "change",
+                function () {
+
+                    const file =
+                        this.files[0];
+
+                    if (!file) {
+
+                        previewContainer.style.display =
+                            "none";
+
+                        preview.src = "";
+
+                        return;
+                    }
+
+
+                    /* =================================
+                       FILE TYPE VALIDATION
+                    ================================= */
+
+                    const allowedTypes = [
+                        "image/jpeg",
+                        "image/jpg",
+                        "image/png",
+                        "image/webp"
+                    ];
+
+
+                    if (
+                        !allowedTypes.includes(
+                            file.type
+                        )
+                    ) {
+
+                        alert(
+                            "Please select JPG, JPEG, PNG or WEBP image."
+                        );
+
+                        this.value = "";
+
+                        previewContainer.style.display =
+                            "none";
+
+                        return;
+                    }
+
+
+                    /* =================================
+                       FILE SIZE VALIDATION
+                       Maximum 5 MB
+                    ================================= */
+
+                    const maxSize =
+                        5 * 1024 * 1024;
+
+
+                    if (file.size > maxSize) {
+
+                        alert(
+                            "Profile photo must be less than 5 MB."
+                        );
+
+                        this.value = "";
+
+                        previewContainer.style.display =
+                            "none";
+
+                        return;
+                    }
+
+
+                    /* =================================
+                       PREVIEW
+                    ================================= */
+
+                    const reader =
+                        new FileReader();
+
+
+                    reader.onload =
+                        function (event) {
+
+                            preview.src =
+                                event.target.result;
+
+                            previewContainer.style.display =
+                                "flex";
+
+                        };
+
+
+                    reader.readAsDataURL(file);
+
+                }
+            );
+
+        }
+
+
+        /* ==========================================
+           REMOVE PHOTO
+        ========================================== */
+
+        if (removeButton) {
+
+            removeButton.addEventListener(
+                "click",
+                function () {
+
+                    photoInput.value = "";
+
+                    preview.src = "";
+
+                    previewContainer.style.display =
+                        "none";
+
+                }
+            );
+
+        }
+
+
+        /* ==========================================
+           RESET FORM
+        ========================================== */
+
+        const studentForm =
+            document.getElementById(
+                "studentForm"
+            );
+
+
+        if (studentForm) {
+
+            studentForm.addEventListener(
+                "reset",
+                function () {
+
+                    setTimeout(
+                        function () {
+
+                            if (photoInput) {
+                                photoInput.value = "";
+                            }
+
+                            if (preview) {
+                                preview.src = "";
+                            }
+
+                            if (previewContainer) {
+                                previewContainer.style.display =
+                                    "none";
+                            }
+
+                        },
+                        0
+                    );
+
+                }
+            );
+
+        }
+
+    }
+
+);
+
+</script>
+
+
+</body>
+
+</html>

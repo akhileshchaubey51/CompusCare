@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusCare | Admin Authority Portal</title>
+    
+    <link rel="stylesheet" href="admin-login.css">
+</head>
+
+<body>
+
+    <div class="admin-login-wrapper">
+
+        <!-- LEFT HERO / INFO PANEL -->
+        <div class="admin-left-panel">
+            <div class="left-content">
+                <div class="brand-logo">
+                    <img src="images/logo.jpg" alt="KIET Logo">
+                    <span class="badge-tag">ADMIN CONSOLE</span>
+                </div>
+
+                <h1>CampusCare Authority Management</h1>
+                <p class="subtitle">
+                    Centralized platform for KIET Campus Administration to monitor, assign, and resolve civic complaints in real-time.
+                </p>
+
+                <div class="feature-pills">
+                    <div class="pill">
+                        <span class="pill-icon">⚡</span>
+                        <div>
+                            <strong>Live Ticket Routing</strong>
+                            <span>Instant issue updates & tracking</span>
+                        </div>
+                    </div>
+                    <div class="pill">
+                        <span class="pill-icon">📍</span>
+                        <div>
+                            <strong>Geo-Tagged Verification</strong>
+                            <span>Precise campus boundary mapping</span>
+                        </div>
+                    </div>
+                    <div class="pill">
+                        <span class="pill-icon">🛡️</span>
+                        <div>
+                            <strong>Administrative Access</strong>
+                            <span>Actionable remarks & student manager</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="system-status">
+                    <span class="status-dot-pulse"></span>
+                    <span>KIET SQL Server & AI Service: <strong>Operational</strong></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT LOGIN CARD -->
+        <div class="admin-right-panel">
+            <div class="login-card">
+
+                <div class="card-header">
+                    <div class="admin-shield-icon">🔐</div>
+                    <h2>Admin Authentication</h2>
+                    <p>Enter your administrative credentials to continue.</p>
+                </div>
+
+                <form id="adminLoginForm" onsubmit="handleAdminLogin(event)">
+                    
+                    <div class="form-group">
+                        <label for="adminEmail">Admin Email / Username</label>
+                        <div class="input-wrap">
+                            <input 
+                                type="text" 
+                                id="adminEmail" 
+                                placeholder="admin@kiet.edu" 
+                                required
+                                autocomplete="off"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adminPassword">Security Key / Password</label>
+                        <div class="input-wrap">
+                            <input 
+                                type="password" 
+                                id="adminPassword" 
+                                placeholder="••••••••••••" 
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-label">
+                            <input type="checkbox" id="rememberAdmin"> Remember session
+                        </label>
+                        <a href="login.html" class="switch-link">Switch to Student Portal →</a>
+                    </div>
+
+                    <p id="loginErrorMsg" class="error-msg"></p>
+
+                    <button type="submit" class="admin-btn" id="loginBtn">
+                        Sign In to Authority Console →
+                    </button>
+                </form>
+
+                <div class="card-footer">
+                    <p>CampusCare Administrative System • KIET Ghaziabad (2026)</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="admin-login.js"></script>
+
+</body>
+
+</html>

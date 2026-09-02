@@ -1,0 +1,547 @@
+/* =====================================================
+   CAMPUSCARE PROFILE PAGE
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #050505,
+            #0b1220
+        );
+
+    color: #ffffff;
+
+    min-height: 100vh;
+
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.profile-page {
+
+    min-height: 100vh;
+
+    padding:
+        30px 7% 60px;
+
+}
+
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+
+.top-bar {
+
+    margin-bottom: 25px;
+
+}
+
+
+.back-button {
+
+    border: none;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    color: white;
+
+    padding:
+        13px 22px;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.back-button:hover {
+
+    background:
+        rgba(255,255,255,0.16);
+
+    transform:
+        translateX(-3px);
+
+}
+
+
+/* =====================================================
+   PROFILE CONTAINER
+===================================================== */
+
+.profile-container {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    border:
+        1px solid rgba(255,255,255,0.1);
+
+    border-radius: 24px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,0.45);
+
+    backdrop-filter:
+        blur(15px);
+
+}
+
+
+/* =====================================================
+   PROFILE TOP
+===================================================== */
+
+.profile-top {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+}
+
+
+.profile-image-wrapper {
+
+    width: 110px;
+
+    height: 110px;
+
+    border-radius: 50%;
+
+    padding: 4px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #60a5fa
+        );
+
+}
+
+
+.profile-image-wrapper img {
+
+    width: 100%;
+
+    height: 100%;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    background: #111827;
+
+}
+
+
+.profile-title span {
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    color: #60a5fa;
+
+    font-weight: 700;
+
+}
+
+
+.profile-title h1 {
+
+    font-size: 32px;
+
+    margin:
+        6px 0;
+
+}
+
+
+.profile-title p {
+
+    font-size: 17px;
+
+    color: #aeb9ca;
+
+}
+
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.profile-divider {
+
+    height: 1px;
+
+    background:
+        rgba(255,255,255,0.1);
+
+    margin:
+        35px 0;
+
+}
+
+
+/* =====================================================
+   DETAILS HEADING
+===================================================== */
+
+.details-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.details-heading > span {
+
+    font-size: 30px;
+
+}
+
+
+.details-heading h2 {
+
+    font-size: 24px;
+
+}
+
+
+.details-heading p {
+
+    margin-top: 4px;
+
+    color: #9ca9bc;
+
+    font-size: 15px;
+
+}
+
+
+/* =====================================================
+   DETAILS GRID
+===================================================== */
+
+.details-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.detail-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 20px;
+
+    min-height: 90px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255,255,255,0.055);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    transition: 0.3s;
+
+}
+
+
+.detail-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(255,255,255,0.08);
+
+}
+
+
+.detail-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        rgba(37,99,235,0.18);
+
+    font-size: 23px;
+
+    flex-shrink: 0;
+
+}
+
+
+.detail-card label {
+
+    display: block;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    margin-bottom: 6px;
+
+}
+
+
+.detail-card strong {
+
+    display: block;
+
+    font-size: 17px;
+
+    color: #ffffff;
+
+    word-break: break-word;
+
+}
+
+
+.full-width {
+
+    grid-column: 1 / -1;
+
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.profile-loading {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 35px;
+
+    gap: 15px;
+
+    color: #aeb9ca;
+
+}
+
+
+.loader {
+
+    width: 40px;
+
+    height: 40px;
+
+    border:
+        4px solid
+        rgba(255,255,255,0.15);
+
+    border-top-color:
+        #60a5fa;
+
+    border-radius: 50%;
+
+    animation:
+        spin 0.8s linear infinite;
+
+}
+
+
+@keyframes spin {
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.profile-error {
+
+    display: none;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px;
+
+}
+
+
+.profile-error span {
+
+    font-size: 40px;
+
+}
+
+
+.profile-error h3 {
+
+    margin:
+        12px 0 6px;
+
+    font-size: 22px;
+
+}
+
+
+.profile-error p {
+
+    color: #9ca9bc;
+
+    margin-bottom: 20px;
+
+}
+
+
+.profile-error button {
+
+    border: none;
+
+    background:
+        #2563eb;
+
+    color: white;
+
+    padding:
+        12px 25px;
+
+    border-radius: 9px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 750px) {
+
+    .profile-page {
+
+        padding:
+            20px 15px 40px;
+
+    }
+
+
+    .profile-container {
+
+        padding: 25px 18px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .profile-top {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+    .profile-title h1 {
+
+        font-size: 25px;
+
+    }
+
+
+    .details-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .full-width {
+
+        grid-column: auto;
+
+    }
+
+}

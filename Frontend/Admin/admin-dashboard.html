@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusCare | Admin Authority Dashboard</title>
+    <link rel="stylesheet" href="admin-dashboard.css">
+</head>
+<body>
+
+    <!-- SIDEBAR NAVIGATION -->
+    <aside class="admin-sidebar">
+        <div class="sidebar-brand">
+            <img src="images/logo.jpg" alt="KIET Logo">
+            <span>Admin Console</span>
+        </div>
+
+        <nav class="sidebar-menu">
+            <button class="nav-item active" onclick="window.location.href='admin-dashboard.html'">
+                <span>📋</span> All Complaints
+            </button>
+            <button class="nav-item" onclick="window.location.href='admin.html'">
+                <span>🎓</span> Manage Students
+            </button>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="logout-btn" onclick="logoutAdmin()">
+                <span>🚪</span> Logout
+            </button>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="admin-main">
+
+        <!-- TOP BAR -->
+        <header class="admin-topbar">
+            <div>
+                <h1>Complaints Management</h1>
+                <p>Live civic issue reports from KIET campus</p>
+            </div>
+
+            <div class="quick-stats">
+                <div class="stat-pill total">Total: <strong id="countTotal">0</strong></div>
+                <div class="stat-pill pending">Pending: <strong id="countPending">0</strong></div>
+                <div class="stat-pill inprogress">In Progress: <strong id="countInProgress">0</strong></div>
+                <div class="stat-pill resolved">Resolved: <strong id="countResolved">0</strong></div>
+            </div>
+        </header>
+
+        <!-- CONTROLS & FILTER BAR -->
+        <div class="table-controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search by Student ID, Name or Issue..." oninput="filterComplaints()">
+            </div>
+
+            <div class="filters-wrap">
+                <select id="statusFilter" onchange="filterComplaints()">
+                    <option value="all">All Status</option>
+                    <option value="Submitted">Submitted (Pending)</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Resolved">Resolved</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+
+                <select id="issueFilter" onchange="filterComplaints()">
+                    <option value="all">All Issues</option>
+                    <option value="Road Issues">Road Issues</option>
+                    <option value="Water Issues">Water Issues</option>
+                    <option value="Electricity">Electricity</option>
+                    <option value="Cleanliness">Cleanliness</option>
+                    <option value="Parking">Parking</option>
+                    <option value="Infrastructure">Infrastructure</option>
+                    <option value="Internet / Wi-Fi">Internet / Wi-Fi</option>
+                    <option value="Other Issues">Other Issues</option>
+                </select>
+
+                <button class="refresh-btn" onclick="loadAdminComplaints()">🔄 Refresh</button>
+            </div>
+        </div>
+
+        <!-- COMPLAINTS TABLE -->
+        <div class="table-container">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Ticket ID</th>
+                        <th>Student Details</th>
+                        <th>Issue Type</th>
+                        <th>Description & Location</th>
+                        <th>Photo</th>
+                        <th>Reported Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="complaintsTableBody">
+                    <tr>
+                        <td colspan="8" class="table-empty">Loading tickets from database...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <!-- STATUS UPDATE MODAL -->
+    <div class="modal-overlay" id="statusModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeStatusModal()">×</button>
+            <h3>Update Ticket Status</h3>
+            <p id="modalTicketSubtitle" class="modal-sub">Ticket #1001</p>
+
+            <form onsubmit="saveStatusUpdate(event)">
+                <input type="hidden" id="modalComplaintId">
+
+                <div class="form-field">
+                    <label for="modalStatusSelect">New Status</label>
+                    <select id="modalStatusSelect" required>
+                        <option value="Submitted">Submitted (Pending)</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Resolved">Resolved</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="modalRemarkInput">Admin Remark / Action Taken</label>
+                    <textarea id="modalRemarkInput" placeholder="Add remark (e.g. Electrician assigned, Pothole repaired)..."></textarea>
+                </div>
+
+                <div class="modal-btn-row">
+                    <button type="button" class="btn-cancel" onclick="closeStatusModal()">Cancel</button>
+                    <button type="submit" class="btn-save" id="saveStatusBtn">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin-dashboard.js"></script>
+</body>
+</html>

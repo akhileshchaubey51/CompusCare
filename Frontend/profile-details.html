@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        CampusCare | My Profile
+    </title>
+
+    <link rel="stylesheet" href="profile-details.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     PROFILE PAGE
+===================================================== -->
+
+<div class="profile-page">
+
+
+    <!-- BACK BUTTON -->
+
+    <div class="top-bar">
+
+        <button
+            class="back-button"
+            onclick="goBackToDashboard()">
+
+            ← Back to Dashboard
+
+        </button>
+
+    </div>
+
+
+    <!-- PROFILE CARD -->
+
+    <div class="profile-container">
+
+
+        <!-- HEADER -->
+
+        <div class="profile-top">
+
+            <div class="profile-image-wrapper">
+
+                <img
+                    id="profileImage"
+                    src="images/profile.png"
+                    alt="Student Profile"
+                    onerror="this.src='images/profile.png'">
+
+            </div>
+
+
+            <div class="profile-title">
+
+                <span>
+                    CAMPUSCARE
+                </span>
+
+                <h1 id="studentName">
+                    Loading...
+                </h1>
+
+                <p id="studentKietId">
+                    Loading KIET ID...
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-divider"></div>
+
+
+        <!-- STUDENT DETAILS -->
+
+        <div class="details-heading">
+
+            <span>
+                👤
+            </span>
+
+            <div>
+
+                <h2>
+                    Student Information
+                </h2>
+
+                <p>
+                    Your registered CampusCare details
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="details-grid">
+
+
+            <!-- NAME -->
+
+            <div class="detail-card">
+
+                <span class="detail-icon">
+                    👤
+                </span>
+
+                <div>
+
+                    <label>
+                        Full Name
+                    </label>
+
+                    <strong id="detailName">
+                        Loading...
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- KIET ID -->
+
+            <div class="detail-card">
+
+                <span class="detail-icon">
+                    🆔
+                </span>
+
+                <div>
+
+                    <label>
+                        KIET ID
+                    </label>
+
+                    <strong id="detailKietId">
+                        Loading...
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- COLLEGE -->
+
+            <div class="detail-card">
+
+                <span class="detail-icon">
+                    🏫
+                </span>
+
+                <div>
+
+                    <label>
+                        College
+                    </label>
+
+                    <strong id="detailCollege">
+                        Loading...
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- COURSE -->
+
+            <div class="detail-card">
+
+                <span class="detail-icon">
+                    🎓
+                </span>
+
+                <div>
+
+                    <label>
+                        Course
+                    </label>
+
+                    <strong id="detailCourse">
+                        Loading...
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- BRANCH -->
+
+            <div class="detail-card">
+
+                <span class="detail-icon">
+                    📚
+                </span>
+
+                <div>
+
+                    <label>
+                        Branch / Department
+                    </label>
+
+                    <strong id="detailBranch">
+                        Loading...
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- YEAR -->
+
+            <div class="detail-card">
+
+                <span class="detail-icon">
+                    📅
+                </span>
+
+                <div>
+
+                    <label>
+                        Year
+                    </label>
+
+                    <strong id="detailYear">
+                        Loading...
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- SEMESTER -->
+
+            <div class="detail-card">
+
+                <span class="detail-icon">
+                    📖
+                </span>
+
+                <div>
+
+                    <label>
+                        Semester
+                    </label>
+
+                    <strong id="detailSemester">
+                        Loading...
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHONE -->
+
+            <div class="detail-card">
+
+                <span class="detail-icon">
+                    📱
+                </span>
+
+                <div>
+
+                    <label>
+                        Mobile Number
+                    </label>
+
+                    <strong id="detailPhone">
+                        Loading...
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="detail-card">
+
+                <span class="detail-icon">
+                    ✉️
+                </span>
+
+                <div>
+
+                    <label>
+                        Email
+                    </label>
+
+                    <strong id="detailEmail">
+                        Loading...
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- GENDER -->
+
+            <div class="detail-card">
+
+                <span class="detail-icon">
+                    ⚧
+                </span>
+
+                <div>
+
+                    <label>
+                        Gender
+                    </label>
+
+                    <strong id="detailGender">
+                        Loading...
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- DOB -->
+
+            <div class="detail-card">
+
+                <span class="detail-icon">
+                    🎂
+                </span>
+
+                <div>
+
+                    <label>
+                        Date of Birth
+                    </label>
+
+                    <strong id="detailDob">
+                        Loading...
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- ADDRESS -->
+
+            <div class="detail-card full-width">
+
+                <span class="detail-icon">
+                    📍
+                </span>
+
+                <div>
+
+                    <label>
+                        Address
+                    </label>
+
+                    <strong id="detailAddress">
+                        Loading...
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- LOADING -->
+
+        <div
+            class="profile-loading"
+            id="profileLoading">
+
+            <div class="loader"></div>
+
+            <p>
+                Fetching your profile details...
+            </p>
+
+        </div>
+
+
+        <!-- ERROR -->
+
+        <div
+            class="profile-error"
+            id="profileError">
+
+            <span>
+                ❌
+            </span>
+
+            <h3>
+                Unable to load profile
+            </h3>
+
+            <p id="profileErrorMessage">
+                Please try again.
+            </p>
+
+            <button
+                onclick="loadStudentProfile()">
+
+                Try Again
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<script src="profile-details.js"></script>
+
+</body>
+
+</html>

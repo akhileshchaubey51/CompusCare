@@ -1,0 +1,665 @@
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "DM Sans", Arial, sans-serif;
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0)
+        ),
+        url("images/college1.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* =====================================================
+   FORM CONTAINER
+===================================================== */
+
+.form-container {
+    width: 100%;
+    max-width: 900px;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+
+/* =====================================================
+   FORM BOX
+===================================================== */
+
+.form-box {
+    width: 100%;
+    max-width: 850px;
+    position: relative;
+    overflow: hidden;
+    padding: 40px 30px;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 20px;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    animation: formColorChange 8s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   ANIMATED FORM COLOR
+===================================================== */
+
+@keyframes formColorChange {
+    0% {
+        background: rgba(255, 255, 255, 0.18);
+        border-color: rgba(255, 255, 255, 0.45);
+    }
+    25% {
+        background: rgba(96, 165, 250, 0.18);
+        border-color: rgba(147, 197, 253, 0.55);
+    }
+    50% {
+        background: rgba(139, 92, 246, 0.16);
+        border-color: rgba(196, 181, 253, 0.55);
+    }
+    75% {
+        background: rgba(34, 211, 238, 0.16);
+        border-color: rgba(165, 243, 252, 0.55);
+    }
+    100% {
+        background: rgba(255, 255, 255, 0.18);
+        border-color: rgba(255, 255, 255, 0.45);
+    }
+}
+
+
+/* =====================================================
+   FORM HEADER
+===================================================== */
+
+.form-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+
+/* =====================================================
+   FORM ICON / LOGO
+===================================================== */
+
+.form-icon {
+    width: 500px;
+    height: 70px;
+    max-width: 100%;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.995);
+    border: 1px solid rgb(255, 255, 255);
+    overflow: hidden;
+}
+
+.form-icon img {
+    width: 300px;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    padding: 6px;
+}
+
+
+/* =====================================================
+   HEADER TEXT
+===================================================== */
+
+.form-header h1 {
+    color: #172033;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.form-header p {
+    color: #000000;
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   NORMAL FORM GROUP
+===================================================== */
+
+.form-group {
+    margin-left: 2cm;
+    margin-right: 1cm;
+    margin-bottom: 24px;
+}
+
+
+/* =====================================================
+   LABELS
+===================================================== */
+
+.form-group label,
+.location-box label {
+    display: block;
+    color: #dc2626 !important;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 9px;
+}
+
+
+/* =====================================================
+   INPUT + TEXTAREA
+===================================================== */
+
+.form-group input,
+.form-group textarea {
+    width: 90%;
+    border: 1px solid #d5deea;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 16px;
+    font-family: inherit;
+    outline: none;
+    background: #ffffff;
+    color: #172033;
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =====================================================
+   ISSUE TYPE + PRIORITY ROW
+===================================================== */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-left: 2cm;
+    margin-right: 1cm;
+}
+
+.form-row .form-group {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 24px;
+}
+
+
+/* =====================================================
+   ISSUE TYPE / PRIORITY LABEL
+===================================================== */
+
+.form-row label {
+    display: block;
+    color: #dc2626 !important;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 9px;
+}
+
+
+/* =====================================================
+   SELECT BOXES & PRIORITY IDs
+===================================================== */
+
+.form-row select,
+#issueType,
+#priority,
+#Priority {
+    width: 100%;
+    height: 55px;
+    padding: 0 18px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #1f2937;
+    font-size: 17px;
+    font-family: "DM Sans", Arial, sans-serif;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-row select:hover,
+#issueType:hover,
+#priority:hover,
+#Priority:hover {
+    border-color: #2563eb;
+}
+
+.form-row select:focus,
+#issueType:focus,
+#priority:focus,
+#Priority:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.form-row select option,
+#issueType option {
+    font-size: 17px;
+    padding: 10px;
+    color: #1f2937;
+    background: #ffffff;
+}
+
+.form-row select option:first-child {
+    color: #6b7280;
+}
+
+
+/* =====================================================
+   TEXTAREA
+===================================================== */
+
+textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+
+/* =====================================================
+   LOCATION BOX
+===================================================== */
+
+.location-box {
+    margin-right: 1cm;
+    background: #f8fbff;
+    border: 1px solid #dbe7f5;
+    border-radius: 14px;
+    padding: 15px;
+}
+
+.location-input-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.location-input-row input {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid #d5deea;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 16px;
+    outline: none;
+}
+
+.location-input-row input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.location-btn {
+    border: none;
+    background: #1261a0;
+    color: white;
+    padding: 0 18px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.location-btn:hover {
+    background: #0d4778;
+    transform: translateY(-2px);
+}
+
+.location-status {
+    margin: 10px 3px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.location-status.success {
+    color: #16a34a;
+}
+
+.location-status.error {
+    color: #dc2626;
+}
+
+.location-status.loading {
+    color: #2563eb;
+}
+
+.campus-map {
+    width: 100%;
+    height: 230px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #dbe7f5;
+    margin-top: 10px;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.submit-btn {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+}
+
+.back-btn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 13px;
+    border: 1px solid #d5deea;
+    border-radius: 10px;
+    background: white;
+    color: #475569;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: #f8fafc;
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   ANIMATED POPUP NOTIFICATION CARDS
+===================================================== */
+
+.form-popup-card {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    min-width: 320px;
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 999999;
+}
+
+.form-popup-card.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.popup-icon-circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.form-popup-card.success .popup-icon-circle {
+    background: #ecfdf5;
+    color: #10b981;
+}
+
+.form-popup-card.error .popup-icon-circle {
+    background: #fef2f2;
+    color: #ef4444;
+}
+
+.popup-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: left;
+}
+
+.popup-text-content strong {
+    font-size: 15px;
+    color: #0f172a;
+}
+
+.popup-text-content p {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.4;
+}
+
+
+/* =====================================================
+   CURSOR BUBBLES & ANIMATIONS
+===================================================== */
+
+.cursor-bubble {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow:
+        0 0 10px rgba(255, 255, 255, 0.7),
+        0 0 20px rgba(96, 165, 250, 0.5);
+    transform: translate(-50%, -50%) scale(0);
+    animation: bubbleEffect 2s ease-out forwards;
+}
+
+@keyframes bubbleEffect {
+    0% {
+        opacity: 0.9;
+        transform: translate(-50%, -50%) scale(0.3);
+    }
+    40% {
+        opacity: 0.7;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -80px) scale(1.8);
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE (TABLET & MOBILE)
+===================================================== */
+
+@media (max-width: 900px) {
+    .form-container {
+        max-width: 800px;
+        padding: 30px 15px;
+    }
+    .form-box {
+        width: 100%;
+        padding: 35px 25px;
+    }
+    .form-icon {
+        width: 400px;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        background-attachment: scroll;
+    }
+    .form-container {
+        width: 100%;
+        min-height: 100vh;
+        padding: 20px 12px;
+    }
+    .form-box {
+        width: 100%;
+        padding: 25px 18px;
+        border-radius: 16px;
+    }
+    .form-header {
+        margin-bottom: 25px;
+    }
+    .form-icon {
+        width: 100%;
+        height: 65px;
+    }
+    .form-icon img {
+        width: 250px;
+    }
+    .form-header h1 {
+        font-size: 27px;
+    }
+    .form-header p {
+        font-size: 15px;
+    }
+    .form-group {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .form-group label,
+    .location-box label,
+    .form-row label {
+        font-size: 18px;
+    }
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        font-size: 16px;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .form-row .form-group {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .form-row select {
+        width: 100%;
+        height: 52px;
+    }
+    .location-box {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 12px;
+    }
+    .location-input-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .location-input-row input {
+        width: 100%;
+    }
+    .location-btn {
+        width: 100%;
+        height: 48px;
+    }
+    .campus-map {
+        width: 100%;
+        height: 300px;
+    }
+    .submit-btn {
+        font-size: 16px;
+        padding: 14px;
+    }
+    .back-btn {
+        font-size: 15px;
+        padding: 12px;
+    }
+    .form-popup-card {
+        top: 15px;
+        right: 15px;
+        left: 15px;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 430px) {
+    .form-container {
+        padding: 15px 8px;
+    }
+    .form-box {
+        padding: 22px 14px;
+    }
+    .form-header h1 {
+        font-size: 24px;
+    }
+    .form-header p {
+        font-size: 14px;
+    }
+    .form-icon {
+        height: 58px;
+    }
+    .form-icon img {
+        width: 220px;
+    }
+    .form-group label,
+    .location-box label,
+    .form-row label {
+        font-size: 17px;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-row select {
+        font-size: 15px;
+    }
+    .campus-map {
+        height: 260px;
+    }
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <title>CampusCare | Login</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <div class="login-page">
+
+        <!-- Left Side -->
+        <div class="login-left">
+
+            <div class="login-overlay">
+
+                <div class="brand">
+                    <img src="images/logo.jpg" alt="CampusCare">
+                </div>
+
+                <h1>
+                    Welcome to <span>CampusCare</span>
+                </h1>
+
+                <p>
+                    Smart campus problem reporting made simple,
+                    transparent and efficient.
+                </p>
+
+                <div class="login-features">
+
+                    <div class="feature">
+                        <span>📸</span>
+                        <div>
+                            <h3>Report Issues</h3>
+                            <p>Report campus problems easily.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <span>📍</span>
+                        <div>
+                            <h3>GPS Location</h3>
+                            <p>Share the exact location of an issue.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <span>📊</span>
+                        <div>
+                            <h3>Track Complaints</h3>
+                            <p>Stay updated until resolution.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Right Side -->
+        <div class="login-right">
+
+            <div class="login-card">
+
+                <h2>
+                    Student Login
+                </h2>
+
+                <p class="login-subtitle">
+                    Login using the college ID and password
+                    provided to you.
+                </p>
+
+
+                <form id="loginForm">
+
+                    <!-- College ID -->
+
+                    <div class="input-group">
+
+                        <label for="collegeId">
+                            College ID
+                        </label>
+
+                        <div class="input-box">
+                            <input
+                                type="text"
+                                id="collegeId"
+                                placeholder="Enter your college ID"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Password -->
+
+                    <div class="input-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="input-box">
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="show-password"
+                                onclick="togglePassword()">
+                                👁
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="login-options">
+
+                        <label class="remember">
+                            <input type="checkbox">
+                            Remember me
+                        </label>
+
+                        <a href="forgot-password.html">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="login-submit">
+
+                        Login
+
+                    </button>
+
+                </form>
+
+
+                <div class="college-note">
+                    <p>
+                        Your College ID and password are provided
+                        by the college administration.
+                    </p>
+
+                </div>
+
+
+                <p class="login-footer">
+                    © 2026 CampusCare
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>

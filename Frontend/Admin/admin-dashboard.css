@@ -1,0 +1,630 @@
+/* =====================================================
+   CAMPUSCARE - ADMIN DASHBOARD CSS
+===================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background: #f8fafc;
+    color: #0f172a;
+    overflow-x: hidden;
+}
+
+/* =====================================================
+   SIDEBAR NAVIGATION
+===================================================== */
+.admin-sidebar {
+    width: 260px;
+    background: #090e1a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 26px 18px;
+    flex-shrink: 0;
+    border-right: 1px solid #1e293b;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    z-index: 100;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 20px;
+}
+
+.sidebar-brand img {
+    height: 38px;
+    border-radius: 8px;
+    background: white;
+    padding: 2px 4px;
+}
+
+.sidebar-brand span {
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    color: #f8fafc;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.nav-item {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    padding: 12px 16px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14.5px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.nav-item span {
+    font-size: 18px;
+}
+
+.nav-item:hover {
+    background: #1e293b;
+    color: #ffffff;
+    transform: translateX(3px);
+}
+
+.nav-item.active {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.sidebar-footer {
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logout-btn {
+    width: 100%;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    color: #f87171;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+    background: #ef4444;
+    color: white;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.35);
+}
+
+/* =====================================================
+   MAIN CONTENT AREA
+===================================================== */
+.admin-main {
+    flex: 1;
+    padding: 32px 40px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* TOP BAR */
+.admin-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.admin-topbar h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+}
+
+.admin-topbar p {
+    color: #64748b;
+    font-size: 14.5px;
+    margin-top: 2px;
+}
+
+.quick-stats {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.stat-pill {
+    padding: 9px 16px;
+    border-radius: 12px;
+    font-size: 13.5px;
+    font-weight: 600;
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.stat-pill strong {
+    font-weight: 800;
+    font-size: 15px;
+}
+
+.stat-pill.total strong { color: #0f172a; }
+.stat-pill.pending strong { color: #d97706; }
+.stat-pill.inprogress strong { color: #2563eb; }
+.stat-pill.resolved strong { color: #16a34a; }
+
+/* =====================================================
+   CONTROLS & FILTERS BAR
+===================================================== */
+.table-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    flex: 1;
+    min-width: 280px;
+    max-width: 420px;
+}
+
+.search-box input {
+    width: 100%;
+    height: 44px;
+    padding: 0 16px;
+    border-radius: 12px;
+    border: 1.5px solid #cbd5e1;
+    background: #ffffff;
+    font-size: 14px;
+    color: #0f172a;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.search-box input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.filters-wrap {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filters-wrap select, .refresh-btn {
+    padding: 0 16px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1.5px solid #cbd5e1;
+    background: #ffffff;
+    color: #334155;
+    cursor: pointer;
+    font-size: 13.5px;
+    font-weight: 600;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.filters-wrap select:focus {
+    border-color: #2563eb;
+}
+
+.refresh-btn {
+    background: #0f172a;
+    color: #ffffff;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.refresh-btn:hover {
+    background: #1e293b;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+/* =====================================================
+   COMPLAINTS TABLE
+===================================================== */
+.table-container {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1.5px solid #e2e8f0;
+    overflow-x: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 950px;
+}
+
+.admin-table th {
+    background: #f8fafc;
+    padding: 16px 18px;
+    font-size: 12.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #475569;
+    border-bottom: 1.5px solid #e2e8f0;
+}
+
+.admin-table td {
+    padding: 16px 18px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 14px;
+    vertical-align: middle;
+    transition: background 0.15s ease;
+}
+
+.admin-table tbody tr:hover td {
+    background: #f8fafc;
+}
+
+/* Cell Elements */
+.ticket-badge {
+    background: #0f172a;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+}
+
+.student-name { 
+    display: block; 
+    font-size: 14.5px; 
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.student-id { 
+    font-size: 12px; 
+    color: #64748b; 
+    font-weight: 500;
+}
+
+.issue-pill {
+    background: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.desc-cell { 
+    max-width: 300px; 
+}
+
+.desc-text { 
+    font-size: 13.5px; 
+    color: #334155; 
+    line-height: 1.5; 
+    margin-bottom: 4px; 
+}
+
+.location-text { 
+    color: #64748b; 
+    font-size: 11.5px; 
+    font-weight: 600;
+    display: block; 
+}
+
+.remark-note {
+    background: #fefce8;
+    border: 1px solid #fef08a;
+    padding: 5px 9px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    margin-top: 6px;
+    color: #854d0e;
+    line-height: 1.4;
+}
+
+.thumb-img {
+    width: 52px;
+    height: 52px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1.5px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.thumb-img:hover {
+    transform: scale(1.08);
+    border-color: #2563eb;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.no-photo {
+    color: #cbd5e1;
+    font-weight: 700;
+}
+
+.date-text {
+    font-size: 12.5px;
+    color: #64748b;
+    white-space: nowrap;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.badge-submitted { background: #fef9c3; color: #854d0e; border: 1px solid #fef08a; }
+.badge-inprogress { background: #dbeafe; color: #1d4ed8; border: 1px solid #bfdbfe; }
+.badge-resolved { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+.badge-rejected { background: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; }
+
+/* Update Button */
+.action-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover { 
+    background: #1d4ed8; 
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+.table-empty {
+    text-align: center;
+    padding: 40px !important;
+    color: #64748b;
+    font-size: 14.5px;
+    font-weight: 600;
+}
+
+/* =====================================================
+   STATUS UPDATE MODAL
+===================================================== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 9999;
+}
+
+.modal-overlay.show { 
+    opacity: 1; 
+    visibility: visible; 
+}
+
+.modal-card {
+    background: #ffffff;
+    width: 460px;
+    max-width: 92%;
+    border-radius: 20px;
+    padding: 28px;
+    position: relative;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.25);
+    transform: translateY(20px) scale(0.96);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.show .modal-card {
+    transform: translateY(0) scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: #f1f5f9;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    line-height: 1;
+    color: #64748b;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease;
+}
+
+.modal-close:hover {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.modal-card h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.modal-sub { 
+    color: #64748b; 
+    font-size: 13.5px; 
+    margin: 4px 0 20px; 
+}
+
+.form-field { 
+    margin-bottom: 16px; 
+    text-align: left; 
+}
+
+.form-field label { 
+    display: block; 
+    font-size: 13px; 
+    font-weight: 700; 
+    margin-bottom: 6px; 
+    color: #334155;
+}
+
+.form-field select, 
+.form-field textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1.5px solid #cbd5e1;
+    font-size: 14px;
+    color: #0f172a;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.form-field select:focus, 
+.form-field textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.form-field textarea { 
+    height: 90px; 
+    resize: none; 
+    line-height: 1.5;
+}
+
+.modal-btn-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.btn-cancel, 
+.btn-save {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn-cancel { 
+    background: #f1f5f9; 
+    color: #475569; 
+}
+
+.btn-cancel:hover { 
+    background: #e2e8f0; 
+}
+
+.btn-save { 
+    background: #2563eb; 
+    color: #ffffff; 
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-save:hover { 
+    background: #1d4ed8; 
+    transform: translateY(-1px);
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+@media (max-width: 1100px) {
+    .admin-main {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 850px) {
+    body {
+        flex-direction: column;
+    }
+    .admin-sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 16px 20px;
+    }
+    .sidebar-brand {
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+    }
+    .sidebar-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .nav-item {
+        padding: 8px 14px;
+    }
+    .logout-btn {
+        margin-top: 10px;
+    }
+    .table-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .search-box {
+        max-width: 100%;
+    }
+}
