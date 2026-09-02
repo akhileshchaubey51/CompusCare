@@ -22,7 +22,7 @@ cd CampusCare
 ### 2. Verify Folder Structure
 
 Ensure your files and directories match this hierarchy:
-
+```text
 CampusCare/
 ├── backend/
 │   ├── app.py                      # Flask REST API server and database controllers
@@ -48,7 +48,7 @@ CampusCare/
 │   ├── admin.css                   # Registration portal styles
 │   └── admin.js                    # Student insertion logic
 └── README.md
-
+```
 ---
 
 ### 3. Install Required Dependencies
